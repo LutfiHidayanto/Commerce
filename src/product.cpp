@@ -3,11 +3,11 @@
 int Product::counter = 0;
 
 Product::Product(std::string name, double price, int quantity, std::string owner, std::string category) {
-    code = generateProductCode();
     this->name = name;
     this->price = price;
     this->quantity = quantity;
     this->category = category;
+    code = generateProductCode();
 }
 
 std::string Product::getCategory() {
@@ -30,7 +30,7 @@ std::string Product::getOwner() {
     return owner;
 }
 
-std::string Product::setOwner(std::string owner) {
+void Product::setOwner(std::string owner) {
     this->owner = owner;
 }
 
@@ -63,11 +63,4 @@ std::string Product::generateProductCode() {
         paddedCounter = std::string(leadingZeros, '0') + paddedCounter;
     }
     return prefix + paddedCounter;
-}
-
-void Product::display() {
-    std::cout << "Product Code: " << this->code << std::endl;
-    std::cout << "Product Name: " << this->name << std::endl;
-    std::cout << "Price: $" << price << std::endl;
-    std::cout << "Quantity: " << quantity << std::endl;
 }

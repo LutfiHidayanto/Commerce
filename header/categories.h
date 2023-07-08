@@ -1,37 +1,44 @@
 #pragma once   
 
-#include <map>
-#include <string>
+#include "../header/product.h"
+
+class Product;
 
 class Categories
 {
 private:
-    std::map<std::string, std::string> allCategories = {
-        {"Electronics", "E"},
-        {"Fashion", "F"},
-        {"Home & Kitchen", "HK"},
-        {"Beauty & Personal Care", "BPC"},
-        {"Books", "B"},
-        {"Sports & Outdoors", "SO"},
-        {"Health & Wellness", "HW"},
-        {"Toys & Games", "TG"},
-        {"Automotive", "A"},
-        {"Office Supplies", "OS"},
-        {"Groceries", "G"},
-        {"Jewelry", "J"},
-        {"Furniture", "F"},
-        {"Pet Supplies", "PS"},
-        {"Baby & Kids", "BK"},
-        {"Tools & Home Improvement", "THI"},
-        {"Music & Movies", "MM"},
-        {"Arts & Crafts", "AC"},
-        {"Outdoor & Garden", "OG"},
-        {"Food & Beverages", "FB"}
+    std::map<std::string, std::pair<std::string, std::vector<Product*>>> allCategories = {
+        {"E", {"Electronics", {}}},
+        {"F", {"Fashion", {}}},
+        {"HK", {"Home & Kitchen", {}}},
+        {"BPC", {"Beauty & Personal Care", {}}},
+        {"B", {"Books", {}}},
+        {"SO", {"Sports & Outdoors", {}}},
+        {"HW", {"Health & Wellness", {}}},
+        {"TG", {"Toys & Games", {}}},
+        {"A", {"Automotive", {}}},
+        {"OS", {"Office Supplies", {}}},
+        {"G", {"Groceries", {}}},
+        {"J", {"Jewelry", {}}},
+        {"F", {"Furniture", {}}},
+        {"PS", {"Pet Supplies", {}}},
+        {"BK", {"Baby & Kids", {}}},
+        {"THI", {"Tools & Home Improvement", {}}},
+        {"MM", {"Music & Movies", {}}},
+        {"AC", {"Arts & Crafts", {}}},
+        {"OG", {"Outdoor & Garden", {}}},
+        {"FB", {"Food & Beverages", {}}},
     };
 public:
     Categories() {};
-    std::map<std::string, std::string> getAllCategories();
+    std::map<std::string, std::pair<std::string, std::vector<Product*>>> getAllCategories();
+    void addProduct(std::string category,Product *product);
+    bool isCategory(std::string category);
+    void printAllcategories();
+    bool printProductbyCategory(std::string categorycode);
     void setCategory(std::string newCategory, std::string code);
     void deleteCategory(std::string category);
+    void deleteProduct(Product *product, std::string categorycode);
+    void setQuantity(Product *product, std::string categorycode, int quantity); 
 };
 

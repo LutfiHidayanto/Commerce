@@ -1,7 +1,8 @@
 #pragma once   
 
-#include <iostream>
-#include <string>
+#include "stdpch.h"
+
+#include "../header/categories.h"
 
 class Product {
 private:
@@ -21,13 +22,12 @@ public:
     std::string getCode();
     std::string getName();
     std::string getOwner();
-    std::string setOwner(std::string owner);
+    void setOwner(std::string owner);
     void setName(std::string newName);
     double getPrice();
     void setPrice(double newPrice);
     int getQuantity();
     void setQuantity(int newQuantity);
     std::string generateProductCode();
-    void display();
 };
 
