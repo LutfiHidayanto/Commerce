@@ -1,0 +1,27 @@
+[
+{
+  "directory": "D:/Kuliah/Semester 2/Struktur data dan algoritma/Responsi/build",
+  "command": "C:\\MinGW\\bin\\g++.exe   -g -o CMakeFiles\\MyExecutable.dir\\src\\categories.cpp.obj -c \"D:\\Kuliah\\Semester 2\\Struktur data dan algoritma\\Responsi\\src\\categories.cpp\"",
+  "file": "D:/Kuliah/Semester 2/Struktur data dan algoritma/Responsi/src/categories.cpp"
+},
+{
+  "directory": "D:/Kuliah/Semester 2/Struktur data dan algoritma/Responsi/build",
+  "command": "C:\\MinGW\\bin\\g++.exe   -g -o CMakeFiles\\MyExecutable.dir\\src\\ecommerce.cpp.obj -c \"D:\\Kuliah\\Semester 2\\Struktur data dan algoritma\\Responsi\\src\\ecommerce.cpp\"",
+  "file": "D:/Kuliah/Semester 2/Struktur data dan algoritma/Responsi/src/ecommerce.cpp"
+},
+{
+  "directory": "D:/Kuliah/Semester 2/Struktur data dan algoritma/Responsi/build",
+  "command": "C:\\MinGW\\bin\\g++.exe   -g -o CMakeFiles\\MyExecutable.dir\\src\\product.cpp.obj -c \"D:\\Kuliah\\Semester 2\\Struktur data dan algoritma\\Responsi\\src\\product.cpp\"",
+  "file": "D:/Kuliah/Semester 2/Struktur data dan algoritma/Responsi/src/product.cpp"
+},
+{
+  "directory": "D:/Kuliah/Semester 2/Struktur data dan algoritma/Responsi/build",
+  "command": "C:\\MinGW\\bin\\g++.exe   -g -o CMakeFiles\\MyExecutable.dir\\src\\stdpch.cpp.obj -c \"D:\\Kuliah\\Semester 2\\Struktur data dan algoritma\\Responsi\\src\\stdpch.cpp\"",
+  "file": "D:/Kuliah/Semester 2/Struktur data dan algoritma/Responsi/src/stdpch.cpp"
+},
+{
+  "directory": "D:/Kuliah/Semester 2/Struktur data dan algoritma/Responsi/build",
+  "command": "C:\\MinGW\\bin\\g++.exe   -g -o CMakeFiles\\MyExecutable.dir\\src\\user.cpp.obj -c \"D:\\Kuliah\\Semester 2\\Struktur data dan algoritma\\Responsi\\src\\user.cpp\"",
+  "file": "D:/Kuliah/Semester 2/Struktur data dan algoritma/Responsi/src/user.cpp"
+}
+]
