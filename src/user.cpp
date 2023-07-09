@@ -1,14 +1,14 @@
 #include "../header/user.h"
 
-User::User(std::string name, std::string password, bool is_pembeli, double saldo)
-{
+
+User::User(std::string name, std::string password, bool is_pembeli, double saldo) {
     this->name = name;
     this->password = password;
     this->is_pembeli = is_pembeli;
     this->saldo = saldo;
 }
-std::string User::getName()
-{
+
+std::string User::getName() {
     return this->name;
 }
 
@@ -38,4 +38,13 @@ double User::getSaldo() {
 
 void User::setSaldo(double saldo) {
     this->saldo = saldo;
+}
+
+nlohmann::json User::toJson() {
+    nlohmann::json jsonData;
+    jsonData["name"] = this->name;
+    jsonData["password"] = this->password;
+    jsonData["is_pembeli"] = this->is_pembeli;
+    jsonData["saldo"] = this->saldo;
+    return jsonData;
 }

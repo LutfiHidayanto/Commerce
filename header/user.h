@@ -8,6 +8,8 @@ private:
     std::string password;
     bool is_pembeli;
     double saldo;
+    unsigned int id;
+    static unsigned int nextId;
 public:
     User(std::string name, std::string password, bool is_pembeli, double saldo);
     User() {};
@@ -19,5 +21,6 @@ public:
     void setIs_pembeli(bool is_pembeli);
     double getSaldo();
     void setSaldo(double saldo);
+    nlohmann::json toJson();
 };
 

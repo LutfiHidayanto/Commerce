@@ -1,8 +1,7 @@
 #pragma once   
 
 #include "stdpch.h"
-
-#include "../header/categories.h"
+#include "categories.h"
 
 class Product {
 private:
@@ -29,5 +28,10 @@ public:
     int getQuantity();
     void setQuantity(int newQuantity);
     std::string generateProductCode();
+    void printProduct();
+    std::map<std::string, Product*> searchByCategory(const std::map<std::string, Product*>& products, const std::string& category);
+    void printByCategory(const std::map<std::string, Product*>& products, const std::string& category);
+    nlohmann::json toJson();
+
 };
 
