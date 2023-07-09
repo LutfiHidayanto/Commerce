@@ -510,24 +510,24 @@ ContinuousSubmit/fast:
 .PHONY : ContinuousSubmit/fast
 
 #=============================================================================
-# Target rules for targets named MyExecutable
+# Target rules for targets named ecommerce
 
 # Build rule for target.
-MyExecutable: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 MyExecutable
-.PHONY : MyExecutable
+ecommerce: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 ecommerce
+.PHONY : ecommerce
 
 # fast build rule for target.
-MyExecutable/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\MyExecutable.dir\build.make CMakeFiles/MyExecutable.dir/build
-.PHONY : MyExecutable/fast
+ecommerce/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ecommerce.dir\build.make CMakeFiles/ecommerce.dir/build
+.PHONY : ecommerce/fast
 
 src/categories.obj: src/categories.cpp.obj
 .PHONY : src/categories.obj
 
 # target to build an object file
 src/categories.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\MyExecutable.dir\build.make CMakeFiles/MyExecutable.dir/src/categories.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ecommerce.dir\build.make CMakeFiles/ecommerce.dir/src/categories.cpp.obj
 .PHONY : src/categories.cpp.obj
 
 src/categories.i: src/categories.cpp.i
@@ -535,7 +535,7 @@ src/categories.i: src/categories.cpp.i
 
 # target to preprocess a source file
 src/categories.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\MyExecutable.dir\build.make CMakeFiles/MyExecutable.dir/src/categories.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ecommerce.dir\build.make CMakeFiles/ecommerce.dir/src/categories.cpp.i
 .PHONY : src/categories.cpp.i
 
 src/categories.s: src/categories.cpp.s
@@ -543,7 +543,7 @@ src/categories.s: src/categories.cpp.s
 
 # target to generate assembly for a file
 src/categories.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\MyExecutable.dir\build.make CMakeFiles/MyExecutable.dir/src/categories.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ecommerce.dir\build.make CMakeFiles/ecommerce.dir/src/categories.cpp.s
 .PHONY : src/categories.cpp.s
 
 src/ecommerce.obj: src/ecommerce.cpp.obj
@@ -551,7 +551,7 @@ src/ecommerce.obj: src/ecommerce.cpp.obj
 
 # target to build an object file
 src/ecommerce.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\MyExecutable.dir\build.make CMakeFiles/MyExecutable.dir/src/ecommerce.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ecommerce.dir\build.make CMakeFiles/ecommerce.dir/src/ecommerce.cpp.obj
 .PHONY : src/ecommerce.cpp.obj
 
 src/ecommerce.i: src/ecommerce.cpp.i
@@ -559,7 +559,7 @@ src/ecommerce.i: src/ecommerce.cpp.i
 
 # target to preprocess a source file
 src/ecommerce.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\MyExecutable.dir\build.make CMakeFiles/MyExecutable.dir/src/ecommerce.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ecommerce.dir\build.make CMakeFiles/ecommerce.dir/src/ecommerce.cpp.i
 .PHONY : src/ecommerce.cpp.i
 
 src/ecommerce.s: src/ecommerce.cpp.s
@@ -567,7 +567,7 @@ src/ecommerce.s: src/ecommerce.cpp.s
 
 # target to generate assembly for a file
 src/ecommerce.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\MyExecutable.dir\build.make CMakeFiles/MyExecutable.dir/src/ecommerce.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ecommerce.dir\build.make CMakeFiles/ecommerce.dir/src/ecommerce.cpp.s
 .PHONY : src/ecommerce.cpp.s
 
 src/product.obj: src/product.cpp.obj
@@ -575,7 +575,7 @@ src/product.obj: src/product.cpp.obj
 
 # target to build an object file
 src/product.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\MyExecutable.dir\build.make CMakeFiles/MyExecutable.dir/src/product.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ecommerce.dir\build.make CMakeFiles/ecommerce.dir/src/product.cpp.obj
 .PHONY : src/product.cpp.obj
 
 src/product.i: src/product.cpp.i
@@ -583,7 +583,7 @@ src/product.i: src/product.cpp.i
 
 # target to preprocess a source file
 src/product.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\MyExecutable.dir\build.make CMakeFiles/MyExecutable.dir/src/product.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ecommerce.dir\build.make CMakeFiles/ecommerce.dir/src/product.cpp.i
 .PHONY : src/product.cpp.i
 
 src/product.s: src/product.cpp.s
@@ -591,15 +591,39 @@ src/product.s: src/product.cpp.s
 
 # target to generate assembly for a file
 src/product.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\MyExecutable.dir\build.make CMakeFiles/MyExecutable.dir/src/product.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ecommerce.dir\build.make CMakeFiles/ecommerce.dir/src/product.cpp.s
 .PHONY : src/product.cpp.s
+
+src/relationship.obj: src/relationship.cpp.obj
+.PHONY : src/relationship.obj
+
+# target to build an object file
+src/relationship.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ecommerce.dir\build.make CMakeFiles/ecommerce.dir/src/relationship.cpp.obj
+.PHONY : src/relationship.cpp.obj
+
+src/relationship.i: src/relationship.cpp.i
+.PHONY : src/relationship.i
+
+# target to preprocess a source file
+src/relationship.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ecommerce.dir\build.make CMakeFiles/ecommerce.dir/src/relationship.cpp.i
+.PHONY : src/relationship.cpp.i
+
+src/relationship.s: src/relationship.cpp.s
+.PHONY : src/relationship.s
+
+# target to generate assembly for a file
+src/relationship.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ecommerce.dir\build.make CMakeFiles/ecommerce.dir/src/relationship.cpp.s
+.PHONY : src/relationship.cpp.s
 
 src/stdpch.obj: src/stdpch.cpp.obj
 .PHONY : src/stdpch.obj
 
 # target to build an object file
 src/stdpch.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\MyExecutable.dir\build.make CMakeFiles/MyExecutable.dir/src/stdpch.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ecommerce.dir\build.make CMakeFiles/ecommerce.dir/src/stdpch.cpp.obj
 .PHONY : src/stdpch.cpp.obj
 
 src/stdpch.i: src/stdpch.cpp.i
@@ -607,7 +631,7 @@ src/stdpch.i: src/stdpch.cpp.i
 
 # target to preprocess a source file
 src/stdpch.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\MyExecutable.dir\build.make CMakeFiles/MyExecutable.dir/src/stdpch.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ecommerce.dir\build.make CMakeFiles/ecommerce.dir/src/stdpch.cpp.i
 .PHONY : src/stdpch.cpp.i
 
 src/stdpch.s: src/stdpch.cpp.s
@@ -615,7 +639,7 @@ src/stdpch.s: src/stdpch.cpp.s
 
 # target to generate assembly for a file
 src/stdpch.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\MyExecutable.dir\build.make CMakeFiles/MyExecutable.dir/src/stdpch.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ecommerce.dir\build.make CMakeFiles/ecommerce.dir/src/stdpch.cpp.s
 .PHONY : src/stdpch.cpp.s
 
 src/user.obj: src/user.cpp.obj
@@ -623,7 +647,7 @@ src/user.obj: src/user.cpp.obj
 
 # target to build an object file
 src/user.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\MyExecutable.dir\build.make CMakeFiles/MyExecutable.dir/src/user.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ecommerce.dir\build.make CMakeFiles/ecommerce.dir/src/user.cpp.obj
 .PHONY : src/user.cpp.obj
 
 src/user.i: src/user.cpp.i
@@ -631,7 +655,7 @@ src/user.i: src/user.cpp.i
 
 # target to preprocess a source file
 src/user.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\MyExecutable.dir\build.make CMakeFiles/MyExecutable.dir/src/user.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ecommerce.dir\build.make CMakeFiles/ecommerce.dir/src/user.cpp.i
 .PHONY : src/user.cpp.i
 
 src/user.s: src/user.cpp.s
@@ -639,7 +663,7 @@ src/user.s: src/user.cpp.s
 
 # target to generate assembly for a file
 src/user.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\MyExecutable.dir\build.make CMakeFiles/MyExecutable.dir/src/user.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ecommerce.dir\build.make CMakeFiles/ecommerce.dir/src/user.cpp.s
 .PHONY : src/user.cpp.s
 
 # Help Target
@@ -681,7 +705,7 @@ help:
 	@echo ... NightlySubmit
 	@echo ... NightlyTest
 	@echo ... NightlyUpdate
-	@echo ... MyExecutable
+	@echo ... ecommerce
 	@echo ... src/categories.obj
 	@echo ... src/categories.i
 	@echo ... src/categories.s
@@ -691,6 +715,9 @@ help:
 	@echo ... src/product.obj
 	@echo ... src/product.i
 	@echo ... src/product.s
+	@echo ... src/relationship.obj
+	@echo ... src/relationship.i
+	@echo ... src/relationship.s
 	@echo ... src/stdpch.obj
 	@echo ... src/stdpch.i
 	@echo ... src/stdpch.s

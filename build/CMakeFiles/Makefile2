@@ -62,11 +62,12 @@ CMAKE_BINARY_DIR = "D:\Kuliah\Semester 2\Struktur data dan algoritma\Responsi\bu
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: CMakeFiles/MyExecutable.dir/all
+all: CMakeFiles/ecommerce.dir/all
+all: json-develop/all
 .PHONY : all
 
 # The main recursive "preinstall" target.
-preinstall:
+preinstall: json-develop/preinstall
 .PHONY : preinstall
 
 # The main recursive "clean" target.
@@ -98,8 +99,24 @@ clean: CMakeFiles/ContinuousTest.dir/clean
 clean: CMakeFiles/ContinuousCoverage.dir/clean
 clean: CMakeFiles/ContinuousMemCheck.dir/clean
 clean: CMakeFiles/ContinuousSubmit.dir/clean
-clean: CMakeFiles/MyExecutable.dir/clean
+clean: CMakeFiles/ecommerce.dir/clean
+clean: json-develop/clean
 .PHONY : clean
+
+#=============================================================================
+# Directory level rules for directory json-develop
+
+# Recursive "all" directory target.
+json-develop/all:
+.PHONY : json-develop/all
+
+# Recursive "preinstall" directory target.
+json-develop/preinstall:
+.PHONY : json-develop/preinstall
+
+# Recursive "clean" directory target.
+json-develop/clean:
+.PHONY : json-develop/clean
 
 #=============================================================================
 # Target rules for target CMakeFiles/Experimental.dir
@@ -830,30 +847,30 @@ CMakeFiles/ContinuousSubmit.dir/clean:
 .PHONY : CMakeFiles/ContinuousSubmit.dir/clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/MyExecutable.dir
+# Target rules for target CMakeFiles/ecommerce.dir
 
 # All Build rule for target.
-CMakeFiles/MyExecutable.dir/all:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\MyExecutable.dir\build.make CMakeFiles/MyExecutable.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\MyExecutable.dir\build.make CMakeFiles/MyExecutable.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="D:\Kuliah\Semester 2\Struktur data dan algoritma\Responsi\build\CMakeFiles" --progress-num=1,2,3,4,5,6 "Built target MyExecutable"
-.PHONY : CMakeFiles/MyExecutable.dir/all
+CMakeFiles/ecommerce.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ecommerce.dir\build.make CMakeFiles/ecommerce.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ecommerce.dir\build.make CMakeFiles/ecommerce.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="D:\Kuliah\Semester 2\Struktur data dan algoritma\Responsi\build\CMakeFiles" --progress-num=1,2,3,4,5,6,7 "Built target ecommerce"
+.PHONY : CMakeFiles/ecommerce.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/MyExecutable.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "D:\Kuliah\Semester 2\Struktur data dan algoritma\Responsi\build\CMakeFiles" 6
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/MyExecutable.dir/all
+CMakeFiles/ecommerce.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start "D:\Kuliah\Semester 2\Struktur data dan algoritma\Responsi\build\CMakeFiles" 7
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/ecommerce.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start "D:\Kuliah\Semester 2\Struktur data dan algoritma\Responsi\build\CMakeFiles" 0
-.PHONY : CMakeFiles/MyExecutable.dir/rule
+.PHONY : CMakeFiles/ecommerce.dir/rule
 
 # Convenience name for target.
-MyExecutable: CMakeFiles/MyExecutable.dir/rule
-.PHONY : MyExecutable
+ecommerce: CMakeFiles/ecommerce.dir/rule
+.PHONY : ecommerce
 
 # clean rule for target.
-CMakeFiles/MyExecutable.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\MyExecutable.dir\build.make CMakeFiles/MyExecutable.dir/clean
-.PHONY : CMakeFiles/MyExecutable.dir/clean
+CMakeFiles/ecommerce.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ecommerce.dir\build.make CMakeFiles/ecommerce.dir/clean
+.PHONY : CMakeFiles/ecommerce.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

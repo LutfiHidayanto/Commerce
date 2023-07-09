@@ -26,9 +26,14 @@ D:/Kuliah/Semester 2/Struktur data dan algoritma/Responsi/build/CMakeFiles/Conti
 D:/Kuliah/Semester 2/Struktur data dan algoritma/Responsi/build/CMakeFiles/ContinuousCoverage.dir
 D:/Kuliah/Semester 2/Struktur data dan algoritma/Responsi/build/CMakeFiles/ContinuousMemCheck.dir
 D:/Kuliah/Semester 2/Struktur data dan algoritma/Responsi/build/CMakeFiles/ContinuousSubmit.dir
-D:/Kuliah/Semester 2/Struktur data dan algoritma/Responsi/build/CMakeFiles/MyExecutable.dir
+D:/Kuliah/Semester 2/Struktur data dan algoritma/Responsi/build/CMakeFiles/ecommerce.dir
 D:/Kuliah/Semester 2/Struktur data dan algoritma/Responsi/build/CMakeFiles/package.dir
 D:/Kuliah/Semester 2/Struktur data dan algoritma/Responsi/build/CMakeFiles/package_source.dir
 D:/Kuliah/Semester 2/Struktur data dan algoritma/Responsi/build/CMakeFiles/test.dir
 D:/Kuliah/Semester 2/Struktur data dan algoritma/Responsi/build/CMakeFiles/edit_cache.dir
 D:/Kuliah/Semester 2/Struktur data dan algoritma/Responsi/build/CMakeFiles/rebuild_cache.dir
+D:/Kuliah/Semester 2/Struktur data dan algoritma/Responsi/build/json-develop/CMakeFiles/package.dir
+D:/Kuliah/Semester 2/Struktur data dan algoritma/Responsi/build/json-develop/CMakeFiles/package_source.dir
+D:/Kuliah/Semester 2/Struktur data dan algoritma/Responsi/build/json-develop/CMakeFiles/test.dir
+D:/Kuliah/Semester 2/Struktur data dan algoritma/Responsi/build/json-develop/CMakeFiles/edit_cache.dir
+D:/Kuliah/Semester 2/Struktur data dan algoritma/Responsi/build/json-develop/CMakeFiles/rebuild_cache.dir
