@@ -1,8 +1,14 @@
 {
-    "bob": [
-        "lutfii"
+    "alhitam": [
+        "kazuha"
     ],
-    "lutfii": [
-        "bob"
+    "kazuha": [
+        "lutfihida",
+        "lutfihida",
+        "alhitam"
+    ],
+    "lutfihida": [
+        "kazuha",
+        "kazuha"
     ]
 }

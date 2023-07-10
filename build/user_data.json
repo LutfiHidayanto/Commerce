@@ -1,26 +1,20 @@
 {
-    "bob": {
+    "alhitam": {
         "is_pembeli": true,
-        "name": "bob",
-        "password": "idkk",
-        "saldo": 840.0
+        "name": "alhitam",
+        "password": "Idkbruh123",
+        "saldo": 0.0
     },
-    "hahahaha": {
-        "is_pembeli": true,
-        "name": "hahahaha",
-        "password": "hsal13",
-        "saldo": 9100.0
+    "kazuha": {
+        "is_pembeli": false,
+        "name": "kazuha",
+        "password": "Idkbruh123",
+        "saldo": 240.0
     },
-    "lutfii": {
+    "lutfihida": {
         "is_pembeli": true,
-        "name": "lutfii",
-        "password": "hahiah",
-        "saldo": 80.0
-    },
-    "tomas": {
-        "is_pembeli": true,
-        "name": "tomas",
-        "password": "idk",
-        "saldo": 100.0
+        "name": "lutfihida",
+        "password": "Idkbruh123",
+        "saldo": 380.0
     }
 }

@@ -1,74 +1,66 @@
 {
-    "0001": {
-        "category": "",
-        "code": "0001",
-        "name": "Sepatu",
-        "owner": "Lutfihida",
-        "price": 0.0,
-        "quantity": 1102162140
-    },
-    "E0002": {
+    "E0001": {
         "category": "E",
-        "code": "E0002",
+        "code": "E0001",
         "name": "laptop",
         "owner": "EZMart",
         "price": 10000.0,
         "quantity": 5
     },
-    "E0003": {
+    "E0002": {
         "category": "E",
-        "code": "E0003",
+        "code": "E0002",
         "name": "Kipas Angin",
         "owner": "EZMart",
         "price": 200.0,
         "quantity": 15
     },
-    "FB0004": {
+    "FB0003": {
         "category": "FB",
-        "code": "FB0004",
+        "code": "FB0003",
         "name": "Susu",
         "owner": "EZMart",
         "price": 50.0,
         "quantity": 10
     },
-    "FB0005": {
+    "FB0004": {
         "category": "FB",
-        "code": "FB0005",
+        "code": "FB0004",
         "name": "Indomie",
         "owner": "EZMart",
         "price": 3.0,
         "quantity": 100
     },
-    "OS0006": {
+    "OS0005": {
         "category": "OS",
-        "code": "OS0006",
+        "code": "OS0005",
         "name": "Buku",
         "owner": "EZMart",
         "price": 100.0,
         "quantity": 20
     },
-    "SO0007": {
+    "SO0006": {
         "category": "SO",
-        "code": "SO0007",
+        "code": "SO0006",
         "name": "Sepatu putih",
-        "owner": "Lutfihida",
+        "owner": "kazuha",
         "price": 300.0,
         "quantity": 5
     },
-    "TG0008": {
+    "TG0007": {
         "category": "TG",
-        "code": "TG0008",
+        "code": "TG0007",
         "name": "Boneka",
         "owner": "EZMart",
         "price": 150.0,
         "quantity": 23
     },
-    "TG0009": {
+    "TG0008": {
         "category": "TG",
-        "code": "TG0009",
+        "code": "TG0008",
         "name": "Goku",
-        "owner": "Lutfihida",
+        "owner": "kazuha",
         "price": 100.0,
-        "quantity": 20
+        "quantity": 16
     }
 }

@@ -9,7 +9,6 @@ const std::string FILENAME = "user_data.json";
 const std::string FILENAMEP = "product_data.json";
 const std::string FILENAMER = "relationship_data.json";
 
-
 // Input handling function
 void getInputInRange(int minValue, int maxValue, int &choice) {
     bool isValidInput = false;
@@ -89,25 +88,71 @@ void updateSaldo(const std::string& username, double newSaldo) {
 
 bool regist(User &user, std::map<std::string, User*> &users);
 
+bool isPasswordStrong(const std::string& password) {
+    // Cek panjang
+    bool isValid = true;
+    if (password.length() < 8) {
+        std::cout << "Minimal panjang password adalah 7!\n";
+        return false;
+    }
+
+    // Check huruf kecil
+    if (!std::regex_search(password, std::regex("[a-z]"))) {
+        isValid = false;
+    }
+
+    // Check kapital
+    if (!std::regex_search(password, std::regex("[A-Z]"))) {
+        isValid = false;
+    }
+
+    // Check angka
+    if (!std::regex_search(password, std::regex("[0-9]"))) {
+        isValid = false;
+    }
+
+    // Password passed all checks
+    if (isValid) {
+        return isValid;
+    } else {
+        std::cout << "Password harus memiliki setidaknya 1 huruf kecil, 1 huruf kapital, dan 1 angka!\n";
+        return isValid;
+    }
+}
+
+bool isUsernameValid(const std::string& username) {
+    bool isValid = true;
+    if (username.length() < 5) {
+        std::cout << "Panjang minimal username adalah 4!\n";
+    }
+    // Cek kapital
+    if (std::regex_search(username, std::regex("[A-Z]"))) {
+        isValid = false;
+    }
+
+    // Cek symbol
+    if (std::regex_search(username, std::regex("[!@#$%^&*]"))) {
+        isValid = false;
+    }
+
+    if (isValid) {
+        return isValid;
+    } else {
+        std::cout << "Username tidak boleh mengandung huruf kapital atau simbol!\n";
+        return isValid;
+    }
+}
 
 bool login(User &user, std::map<std::string, User*> &users) {
     int choice;
     std::string name;
     std::string password;
+
     std::cout << "Username: ";
     std::cin >> name;
-    std::cout << "Password: ";
-    std::cin >> password;
-    user.setName(name);
-    user.setPassword(password);
 
-    if (users.count(user.getName()) == 1) {
-        std::cout << "Selamat Anda sudah login!";
-        // Inisiasi variable current user
-        user.setSaldo(users[user.getName()]->getSaldo()); // Inisiasi saldo user menggunakan data dari database
-        user.setIs_pembeli(users[user.getName()]->getIs_pembeli()); // inisiasi pembeli/penjual user menggunakan data dari database
-        return true;
-    } else {
+    // cek nama
+    if (users.count(name) != 1) {
         // Handle jika user belum terdaftar
         std::cout << "Anda belum terdaftar!\nSIlahkan register(1) atau kembali ke homepage(2): ";
         getInputInRange(1, 2, choice);
@@ -115,8 +160,31 @@ bool login(User &user, std::map<std::string, User*> &users) {
             regist(user, users);
             return true;
         }
-        return false;
+        return false;  
+    } 
+    
+    // cek password match
+    while (true) {
+        std::cout << "Password: ";
+        std::cin >> password;
+        if (users[name]->getPassword() != password) {
+            std::cout << "Password salah!\n";
+        } else {
+            break;
+        }
     }
+
+    user.setName(name);
+    user.setPassword(password);
+
+    // Inisiasi variable current user
+    user.setSaldo(users[name]->getSaldo()); // Inisiasi saldo user menggunakan data dari database
+    user.setIs_pembeli(users[name]->getIs_pembeli()); // inisiasi pembeli/penjual user menggunakan data dari database
+    
+    std::cout << "Selamat Anda sudah login!";
+    return true;
+
+    
 
 }
 
@@ -127,11 +195,21 @@ bool regist(User &user, std::map<std::string, User*> &users) {
     bool is_pembeli = false;
 
     // Prompt data user
-    std::cout << "Username: ";
-    std::cin >> name;
-    std::cout << "Password: ";
-    std::cin >> password;
-
+    while (true) {
+        std::cout << "Username: ";
+        std::cin >> name;
+        if (isUsernameValid(name)) {
+            break;
+        }
+    }
+    while (true) {
+        std::cout << "Password: ";
+        std::cin >> password;
+        if (isPasswordStrong(password)) {
+            break;
+        }
+    }
+    
     user.setName(name);
     user.setPassword(password);
     if (users.count(user.getName()) > 0){
@@ -366,7 +444,7 @@ void tampilan_pembeli(User &user, std::map<std::string, User*> &users, std::map<
             int choiceBelanja;
             
             // All product or by category
-            std::cout << "\n1. Tampilkan semua Produk\n2. Cari berdasarkan kategory\n3. Kembali\ninput: ";
+            std::cout << "\n1. Tampilkan semua Produk\n2. Cari berdasarkan kategori\n3. Kembali\ninput: ";
             getInputInRange(1,3, choiceBelanja);
 
             // jika by category
@@ -374,7 +452,7 @@ void tampilan_pembeli(User &user, std::map<std::string, User*> &users, std::map<
                 categories.printAllcategories();
 
                 std::string kodeKategory;
-                std::cout << "Silahkan masukan kode dari kategory yang ingin anda cari: ";
+                std::cout << "Silahkan masukan kode dari kategori yang ingin anda cari: ";
                 std::cin >> kodeKategory;
                 std::cout << "Berikut adalah produk yang tersedia saat ini: \n";
                 // printing product
@@ -467,7 +545,7 @@ void tampilan_penjual(User &user, std::map<std::string, User*> &users, std::map<
         if (choice == 1) {
             int choiceBelanja;
             // All product or by category
-            std::cout << "\n1. Tampilkan semua Produk\n2. Cari berdasarkan kategory\n3. List produk Anda\n4. Kembali\ninput: ";
+            std::cout << "\n1. Tampilkan semua Produk\n2. Cari berdasarkan kategori\n3. List produk Anda\n4. Kembali\ninput: ";
             getInputInRange(1,3, choiceBelanja);
 
             // jika by category
@@ -475,7 +553,7 @@ void tampilan_penjual(User &user, std::map<std::string, User*> &users, std::map<
                 categories.printAllcategories();
 
                 std::string kodeKategory;
-                std::cout << "Silahkan masukan kode dari kategory yang ingin anda cari: ";
+                std::cout << "Silahkan masukan kode dari kategori yang ingin anda cari: ";
                 std::cin >> kodeKategory;
                 std::cout << "Berikut adalah produk yang tersedia saat ini: \n";
                 // printing product
@@ -576,7 +654,7 @@ void tampilan_penjual(User &user, std::map<std::string, User*> &users, std::map<
             Menuteman(user, users, relationship);
         } else {
             logout(&user, users);
-            return;
+            break;
         }
         
     }
@@ -585,7 +663,6 @@ void tampilan_penjual(User &user, std::map<std::string, User*> &users, std::map<
 int main() {
     std::map<std::string, Product*> semua_produk = loadProductsFromFile(); // database untuk menyimpan data produk
     std::set<std::string> namaProduk = loadProductNamesFromFile(); // database untuk menyimpan nama produk
-    User *user = new User("", "", true, 0); // current user
     std::map<std::string, User*> users = loadUsersFromFile(); // database untuk menyimpan user
     Categories *categories = new Categories(); // menyimpan nama nama kategori
     Relationship *relationship = new Relationship(); // menyimpan relasi / friends user
@@ -593,6 +670,7 @@ int main() {
 
 
     while (true) {
+        User *user = new User("", "", true, 0); // current user
         int choice;
         // Clear screen with ANSI
         std::cout << "\033[2J\033[1;1H";
