@@ -1,32 +1,32 @@
 [
 {
   "directory": "D:/Kuliah/Semester 2/Struktur data dan algoritma/Responsi/build",
-  "command": "C:\\MinGW\\bin\\g++.exe  @CMakeFiles/ecommerce.dir/includes_CXX.rsp -g -o CMakeFiles\\ecommerce.dir\\src\\categories.cpp.obj -c \"D:\\Kuliah\\Semester 2\\Struktur data dan algoritma\\Responsi\\src\\categories.cpp\"",
+  "command": "C:\\MinGW\\bin\\g++.exe  @CMakeFiles/ecommerce.dir/includes_CXX.rsp -O3 -DNDEBUG -o CMakeFiles\\ecommerce.dir\\src\\categories.cpp.obj -c \"D:\\Kuliah\\Semester 2\\Struktur data dan algoritma\\Responsi\\src\\categories.cpp\"",
   "file": "D:/Kuliah/Semester 2/Struktur data dan algoritma/Responsi/src/categories.cpp"
 },
 {
   "directory": "D:/Kuliah/Semester 2/Struktur data dan algoritma/Responsi/build",
-  "command": "C:\\MinGW\\bin\\g++.exe  @CMakeFiles/ecommerce.dir/includes_CXX.rsp -g -o CMakeFiles\\ecommerce.dir\\src\\ecommerce.cpp.obj -c \"D:\\Kuliah\\Semester 2\\Struktur data dan algoritma\\Responsi\\src\\ecommerce.cpp\"",
+  "command": "C:\\MinGW\\bin\\g++.exe  @CMakeFiles/ecommerce.dir/includes_CXX.rsp -O3 -DNDEBUG -o CMakeFiles\\ecommerce.dir\\src\\ecommerce.cpp.obj -c \"D:\\Kuliah\\Semester 2\\Struktur data dan algoritma\\Responsi\\src\\ecommerce.cpp\"",
   "file": "D:/Kuliah/Semester 2/Struktur data dan algoritma/Responsi/src/ecommerce.cpp"
 },
 {
   "directory": "D:/Kuliah/Semester 2/Struktur data dan algoritma/Responsi/build",
-  "command": "C:\\MinGW\\bin\\g++.exe  @CMakeFiles/ecommerce.dir/includes_CXX.rsp -g -o CMakeFiles\\ecommerce.dir\\src\\product.cpp.obj -c \"D:\\Kuliah\\Semester 2\\Struktur data dan algoritma\\Responsi\\src\\product.cpp\"",
+  "command": "C:\\MinGW\\bin\\g++.exe  @CMakeFiles/ecommerce.dir/includes_CXX.rsp -O3 -DNDEBUG -o CMakeFiles\\ecommerce.dir\\src\\product.cpp.obj -c \"D:\\Kuliah\\Semester 2\\Struktur data dan algoritma\\Responsi\\src\\product.cpp\"",
   "file": "D:/Kuliah/Semester 2/Struktur data dan algoritma/Responsi/src/product.cpp"
 },
 {
   "directory": "D:/Kuliah/Semester 2/Struktur data dan algoritma/Responsi/build",
-  "command": "C:\\MinGW\\bin\\g++.exe  @CMakeFiles/ecommerce.dir/includes_CXX.rsp -g -o CMakeFiles\\ecommerce.dir\\src\\relationship.cpp.obj -c \"D:\\Kuliah\\Semester 2\\Struktur data dan algoritma\\Responsi\\src\\relationship.cpp\"",
+  "command": "C:\\MinGW\\bin\\g++.exe  @CMakeFiles/ecommerce.dir/includes_CXX.rsp -O3 -DNDEBUG -o CMakeFiles\\ecommerce.dir\\src\\relationship.cpp.obj -c \"D:\\Kuliah\\Semester 2\\Struktur data dan algoritma\\Responsi\\src\\relationship.cpp\"",
   "file": "D:/Kuliah/Semester 2/Struktur data dan algoritma/Responsi/src/relationship.cpp"
 },
 {
   "directory": "D:/Kuliah/Semester 2/Struktur data dan algoritma/Responsi/build",
-  "command": "C:\\MinGW\\bin\\g++.exe  @CMakeFiles/ecommerce.dir/includes_CXX.rsp -g -o CMakeFiles\\ecommerce.dir\\src\\stdpch.cpp.obj -c \"D:\\Kuliah\\Semester 2\\Struktur data dan algoritma\\Responsi\\src\\stdpch.cpp\"",
+  "command": "C:\\MinGW\\bin\\g++.exe  @CMakeFiles/ecommerce.dir/includes_CXX.rsp -O3 -DNDEBUG -o CMakeFiles\\ecommerce.dir\\src\\stdpch.cpp.obj -c \"D:\\Kuliah\\Semester 2\\Struktur data dan algoritma\\Responsi\\src\\stdpch.cpp\"",
   "file": "D:/Kuliah/Semester 2/Struktur data dan algoritma/Responsi/src/stdpch.cpp"
 },
 {
   "directory": "D:/Kuliah/Semester 2/Struktur data dan algoritma/Responsi/build",
-  "command": "C:\\MinGW\\bin\\g++.exe  @CMakeFiles/ecommerce.dir/includes_CXX.rsp -g -o CMakeFiles\\ecommerce.dir\\src\\user.cpp.obj -c \"D:\\Kuliah\\Semester 2\\Struktur data dan algoritma\\Responsi\\src\\user.cpp\"",
+  "command": "C:\\MinGW\\bin\\g++.exe  @CMakeFiles/ecommerce.dir/includes_CXX.rsp -O3 -DNDEBUG -o CMakeFiles\\ecommerce.dir\\src\\user.cpp.obj -c \"D:\\Kuliah\\Semester 2\\Struktur data dan algoritma\\Responsi\\src\\user.cpp\"",
   "file": "D:/Kuliah/Semester 2/Struktur data dan algoritma/Responsi/src/user.cpp"
 }
 ]
