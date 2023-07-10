@@ -92,7 +92,7 @@ bool isPasswordStrong(const std::string& password) {
     // Cek panjang
     bool isValid = true;
     if (password.length() < 8) {
-        std::cout << "Minimal panjang password adalah 7!\n";
+        std::cout << "Minimal panjang password adalah 8!\n";
         return false;
     }
 
@@ -122,7 +122,7 @@ bool isPasswordStrong(const std::string& password) {
 
 bool isUsernameValid(const std::string& username) {
     bool isValid = true;
-    if (username.length() < 5) {
+    if (username.length() < 4) {
         std::cout << "Panjang minimal username adalah 4!\n";
     }
     // Cek kapital
@@ -180,7 +180,7 @@ bool login(User &user, std::map<std::string, User*> &users) {
     // Inisiasi variable current user
     user.setSaldo(users[name]->getSaldo()); // Inisiasi saldo user menggunakan data dari database
     user.setIs_pembeli(users[name]->getIs_pembeli()); // inisiasi pembeli/penjual user menggunakan data dari database
-    
+
     std::cout << "Selamat Anda sudah login!";
     return true;
 

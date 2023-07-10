@@ -16,5 +16,11 @@
         "name": "lutfihida",
         "password": "Idkbruh123",
         "saldo": 380.0
+    },
+    "ridensogun": {
+        "is_pembeli": false,
+        "name": "ridensogun",
+        "password": "Idkbruh123",
+        "saldo": 0.0
     }
 }
