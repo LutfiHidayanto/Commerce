@@ -1,4 +1,3 @@
-// PROGRAM INI MENYIMPAN DATA USER SECARA TEMPORARY SEHINGGA JIKA SUDAH REGISTER NAMUN TERMINAL TERTUTUP/EXIT, MAKA HARUS REGISTER ULANG
 #include "../header/product.h"
 #include "../header/categories.h"
 #include "../header/user.h"
@@ -59,7 +58,7 @@ void saveUsersToFile(std::map<std::string, User*> &users, User &user) {
     }
 
     std::ofstream file(FILENAME);
-    file << userData.dump(4);  // Indentation level of 4 spaces
+    file << userData.dump(4);  
     file.close();
 }
 
@@ -159,7 +158,7 @@ bool regist(User &user, std::map<std::string, User*> &users) {
     nlohmann::json jsonData = user.toJson();
     // menambahkan ke file user_data.json
     std::ofstream file(FILENAME);
-    file << jsonData.dump(4);  // Indentation level of 4 spaces
+    file << jsonData.dump(4); 
     file.close();
 
     std::cout << "Account created successfully! User data saved to user_data.json" << std::endl;
@@ -241,7 +240,7 @@ void saveProductsToFile(const std::map<std::string, Product*>& products) {
     }
 
     std::ofstream file(FILENAMEP);
-    file << productData.dump(4);  // Indentation level of 4 spaces
+    file << productData.dump(4);  
     file.close();
 }
 
@@ -287,7 +286,7 @@ void saveRelationshipsToFile(const Relationship& relationships) {
     }
 
     try {
-        file << jsonData.dump(4);  // Indentation of 4 spaces
+        file << jsonData.dump(4);  
     } catch (const nlohmann::json::exception& e) {
         std::cout << "Error occurred while generating JSON: " << e.what() << std::endl;
     }
@@ -584,13 +583,12 @@ void tampilan_penjual(User &user, std::map<std::string, User*> &users, std::map<
 }
 
 int main() {
-    std::map<std::string, Product*> semua_produk = loadProductsFromFile(); // map
-    std::set<std::string> namaProduk = loadProductNamesFromFile(); // set
-    User *user = new User("", "", true, 0);
-    std::map<std::string, User*> users = loadUsersFromFile(); // sebagai temporary database yang menyimpan user
-    Categories *categories = new Categories();
-    Relationship *relationship = new Relationship();
-
+    std::map<std::string, Product*> semua_produk = loadProductsFromFile(); // database untuk menyimpan data produk
+    std::set<std::string> namaProduk = loadProductNamesFromFile(); // database untuk menyimpan nama produk
+    User *user = new User("", "", true, 0); // current user
+    std::map<std::string, User*> users = loadUsersFromFile(); // database untuk menyimpan user
+    Categories *categories = new Categories(); // menyimpan nama nama kategori
+    Relationship *relationship = new Relationship(); // menyimpan relasi / friends user
     loadRelationshipsFromFile(*relationship);
 
 
@@ -618,14 +616,14 @@ int main() {
             if(!login(*user, users)) {
                 continue;
             }
-        // Quit note: database akan reset jika quit   
         } else {
             delete categories;
             delete user;
+            delete relationship;
             return 0;
         }
 
-        if (user->getIs_pembeli() == true) {
+        if (user->getIs_pembeli()) {
             tampilan_pembeli(*user, users, semua_produk, *categories, *relationship);
         } else {
             tampilan_penjual(*user, users, semua_produk, *categories, namaProduk, *relationship);
