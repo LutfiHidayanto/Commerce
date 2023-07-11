@@ -1,8 +1,8 @@
 #include "../header/relationship.h"
 
 void Relationship::addFriend(const std::string& user1, const std::string& user2) {
-    adjacencyList[user1].push_back(user2);
-    adjacencyList[user2].push_back(user1);
+    adjacencyList[user1].insert(user2);
+    adjacencyList[user2].insert(user1);
 }
 
 void Relationship::deleteFriend(const std::string& user1, const std::string& user2) {
@@ -18,8 +18,8 @@ void Relationship::deleteFriend(const std::string& user1, const std::string& use
     }
 }
 
-std::vector<std::string> Relationship::getFriends(const std::string& user) {
-    std::vector<std::string> friends;
+std::set<std::string> Relationship::getFriends(const std::string& user) {
+    std::set<std::string> friends;
 
     if (adjacencyList.find(user) != adjacencyList.end()) {
         friends = adjacencyList[user];
@@ -38,7 +38,7 @@ bool Relationship::areFriends(const std::string& user1, const std::string& user2
     return false;
 }
 
-const std::unordered_map<std::string, std::vector<std::string>>& Relationship::getAdjacencyList() const {
+const std::unordered_map<std::string, std::set<std::string>>& Relationship::getAdjacencyList() const {
     return adjacencyList;
 }
 
@@ -49,7 +49,7 @@ void Relationship::printFriends(const std::string& user) {
     }
 
     std::cout << "Daftar teman dari " << user << ":" << std::endl;
-    for (const std::string& friendName : adjacencyList[user]) {
+    for (auto& friendName : adjacencyList[user]) {
         std::cout << friendName << std::endl;
     }
 }

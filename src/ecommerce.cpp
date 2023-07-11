@@ -184,8 +184,6 @@ bool login(User &user, std::map<std::string, User*> &users) {
     std::cout << "Selamat Anda sudah login!";
     return true;
 
-    
-
 }
 
 bool regist(User &user, std::map<std::string, User*> &users) {
@@ -435,7 +433,7 @@ void tampilan_pembeli(User &user, std::map<std::string, User*> &users, std::map<
     while (true) {
         // Main menu customer
         std::cout << "\nSaldo Anda Sekarang = Rp" << user.getSaldo() << "000";
-        std::cout << "\n\nMENU\n 1. Belanja\n 2. Top up saldo\n 3. Menu teman\n 4. Log out\ninput: ";
+        std::cout << "\n\nMENU\n 1. Belanja\n 2. Top up saldo\n 3. Friend list\n 4. Log out\ninput: ";
         // Kembali ke home page jika == 3
         getInputInRange(1,4, choice);
         
@@ -452,17 +450,28 @@ void tampilan_pembeli(User &user, std::map<std::string, User*> &users, std::map<
                 categories.printAllcategories();
 
                 std::string kodeKategory;
-                std::cout << "Silahkan masukan kode dari kategori yang ingin anda cari: ";
-                std::cin >> kodeKategory;
+                while (true) {
+                    std::cout << "Silahkan masukan kode dari kategori yang ingin anda cari: ";
+                    std::cin >> kodeKategory;
+                    if (categories.isCategory(kodeKategory)) {
+                        break;
+                    } else {
+                        std::cout << "Kode kategori tidak valid!\n";
+                    }
+
+                }
+    
                 std::cout << "Berikut adalah produk yang tersedia saat ini: \n";
                 // printing product
                 Product *product = new Product(); // dibuat hanya untuk search
                 product->printByCategory(semua_produk, kodeKategory);
                 delete product;
-
-            } else { // jika all
+            // opsi belannja 2
+            } else if (choice == 1) { // jika all
                 std::cout << "Berikut adalah produk yang tersedia saat ini: \n";
                 printProduk(semua_produk);
+            } else {
+                continue;
             }
 
             // Menanyakan barang yang akan dibeli
@@ -543,27 +552,36 @@ void tampilan_penjual(User &user, std::map<std::string, User*> &users, std::map<
         getInputInRange(1,6, choice);
         // Menu belanja
         if (choice == 1) {
-            int choiceBelanja;
+            int choice1;
             // All product or by category
             std::cout << "\n1. Tampilkan semua Produk\n2. Cari berdasarkan kategori\n3. List produk Anda\n4. Kembali\ninput: ";
-            getInputInRange(1,3, choiceBelanja);
+            getInputInRange(1,3, choice1);
 
             // jika by category
-            if (choiceBelanja == 2) {
+            if (choice1 == 2) {
                 categories.printAllcategories();
-
                 std::string kodeKategory;
-                std::cout << "Silahkan masukan kode dari kategori yang ingin anda cari: ";
-                std::cin >> kodeKategory;
+
+                while (true) {
+                    std::cout << "Silahkan masukan kode dari kategori yang ingin anda cari: ";
+                    std::cin >> kodeKategory;
+                    if (categories.isCategory(kodeKategory)) {
+                        break;
+                    } else {
+                        std::cout << "Kode kategori tidak valid!\n";
+                    }
+
+                }
+                
                 std::cout << "Berikut adalah produk yang tersedia saat ini: \n";
                 // printing product
                 Product *product = new Product(); // dibuat hanya untuk search
                 product->printByCategory(semua_produk, kodeKategory);
                 delete product;
-            } else if (choiceBelanja == 1){ // jika all
+            } else if (choice1 == 1){ // jika all
                 std::cout << "Berikut adalah produk yang tersedia saat ini: \n";
                 printProduk(semua_produk);
-            } else if (choiceBelanja == 3) { // list produk yang dijual user
+            } else if (choice1 == 3) { // list produk yang dijual user
                 std::map<std::string, Product*> result;
                 for (auto &pair : semua_produk) {
                     if (pair.second->getOwner() == user.getName()) {
@@ -578,6 +596,7 @@ void tampilan_penjual(User &user, std::map<std::string, User*> &users, std::map<
             int choicejual;
             std::cout << "1. Jual barang baru\n2. Tambah/kurang jumlah barang Anda\n3. Kembali\ninput: ";
             getInputInRange(1, 3, choicejual);
+            // opsi jualan
             if (choicejual == 1) {
                 // Prompt data barang
                 std::cout << "Masukkan data barang yang akan Anda jual\n";
@@ -587,7 +606,7 @@ void tampilan_penjual(User &user, std::map<std::string, User*> &users, std::map<
                     if (isAproduct(namaProduk, name_barang)) {
                         std::cout << "Barang dengan nama ini sudah ada!\n";
                     } else {
-                        continue;
+                        break;;
                     }
                 }
                 
@@ -595,18 +614,25 @@ void tampilan_penjual(User &user, std::map<std::string, User*> &users, std::map<
                 std::cin >> price;
                 std::cout << "Jumlah barang: ";
                 std::cin >> jumlah;
-                categories.printAllcategories();            
-                std::cout << "Kategori(Masukkan kode): ";
-                std::cin >> kategori;
-
+                categories.printAllcategories();
+                while (true) {
+                    std::cout << "Kode Kategori: ";
+                    std::cin >> kategori;
+                    if (categories.isCategory(kategori)) {
+                        break;
+                    } else {
+                        std::cout << "Kode kategori tidak valid!\n";
+                    }
+                }        
+                
                 // Memasukan data barang ke database
                 Product *barang_baru = new Product(name_barang, price, jumlah, user.getName(), kategori);
                 semua_produk[barang_baru->getCode()] = barang_baru;
                 saveProductsToFile(semua_produk);
 
                 std::cout << "Produk berhasil ditambahkan!\n";
-
-            } else if (choice == 2) {
+            // opsi jualan
+            } else if (choicejual == 2) {
                 std::cout << "Masukkan data barang Anda\n";
                 std::cout << "Nama: ";
                 std::cin >> name_barang;
@@ -624,11 +650,14 @@ void tampilan_penjual(User &user, std::map<std::string, User*> &users, std::map<
                 } else {
                     std::cout << "Produk tidak ditemukan!\n";
                 }
+            // opsi jualan
             } else {
-                continue;;
+                continue;
             }
+        // Menu Lihat saldo
         } else if (choice == 3) {
             std::cout << "Saldo Anda: Rp" << user.getSaldo() << "000\n";
+        // menu hapus produk
         } else if (choice == 4) {
                 std::cout << "Masukkan kode produk-produk yang ingin anda hapus(max 5 per operasi)\n";
                 std::vector<std::string> codeProduct(5);

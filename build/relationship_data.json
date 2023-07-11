@@ -1,14 +1,14 @@
 {
     "alhitam": [
-        "kazuha"
+        "kazuha",
+        "lutfihida"
     ],
     "kazuha": [
-        "lutfihida",
-        "lutfihida",
-        "alhitam"
+        "alhitam",
+        "lutfihida"
     ],
     "lutfihida": [
-        "kazuha",
+        "alhitam",
         "kazuha"
     ]
 }
