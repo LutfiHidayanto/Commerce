@@ -70,7 +70,7 @@ Program ini merupakan implementasi sederhana dari sistem E-commerce yang memungk
    ```
 3. Di dalam direktori `build`, jalankan perintah berikut untuk mengonfigurasi proyek menggunakan CMake:
    ```
-   make ..
+   make
    ```
 4. Setelah proses kompilasi selesai, Anda dapat menjalankan program dengan menjalankan perintah berikut:
    ```
@@ -79,6 +79,7 @@ Program ini merupakan implementasi sederhana dari sistem E-commerce yang memungk
 
 ## Cara Menggunakan Program
 
+**Opsi 1**
 1. Pastikan Anda memiliki semua prasyarat yang disebutkan di atas.
 2. Buka file program E-commerce.
 3. Compile program menggunakan compiler C++.
@@ -96,11 +97,15 @@ Program ini merupakan implementasi sederhana dari sistem E-commerce yang memungk
 8. Setelah keluar dari akun, Anda dapat memilih opsi registrasi atau login kembali untuk menggunakan layanan E-commerce.
 9. Untuk keluar dari program, pilih opsi keluar di menu utama.
 
+**Opsi 2**
+1. Jika Anda hanya ingin menjalankan program tanpa memperhatikan kode program, ada tidak perlu melaukakan instalasi prasyarat-prasyarat di atas. Akan tetapi, Anda tetap harus mendownload repo ini. Anda dapat masuk ke folder build kemudian cari file bernama `ecommerce.exe`, kemudian run file tersebut.
+2. Untuk langkah-langkah saat di dalam program, sama seperti opsi 1.
+
 ## Struktur Singkat Program
 
 Program E-commerce terdiri dari beberapa bagian utama:
 
-- File header: `product.h`, `categories.h`, `user.h`, `relationship.h` menyediakan deklarasi kelas, properti, dan method  yang digunakan dalam program. Selain itu, terdapat `stdpch.h` yang digunakan untuk me-link library yang dibutuhkan.  
+- File header: `product.h`, `categories.h`, `user.h`, `relationship.h` menyediakan deklarasi kelas, properti, dan method yang digunakan dalam program. Selain itu, terdapat `stdpch.h` yang digunakan untuk me-link library yang dibutuhkan.  
 - File src: `product.cpp`, `categories.cpp`, `user.cpp`, `relationship.cpp` menyediakan definisi constructor dan method yang terdapat pada header files. 
 - Fungsi `getInputInRange` digunakan untuk memvalidasi input pengguna sesuai dengan rentang yang ditentukan.
 - Fungsi-fungsi `loadUsersFromFile`, `saveUsersToFile`, `updateSaldo` digunakan untuk memuat, menyimpan, dan memperbarui data pengguna dari file JSON.
