@@ -467,7 +467,7 @@ void tampilan_pembeli(User &user, std::map<std::string, User*> &users, std::map<
                 product->printByCategory(semua_produk, kodeKategory);
                 delete product;
             // opsi belannja 2
-            } else if (choice == 1) { // jika all
+            } else if (choiceBelanja == 1) { // jika all
                 std::cout << "Berikut adalah produk yang tersedia saat ini: \n";
                 printProduk(semua_produk);
             } else {
@@ -555,7 +555,7 @@ void tampilan_penjual(User &user, std::map<std::string, User*> &users, std::map<
             int choice1;
             // All product or by category
             std::cout << "\n1. Tampilkan semua Produk\n2. Cari berdasarkan kategori\n3. List produk Anda\n4. Kembali\ninput: ";
-            getInputInRange(1,3, choice1);
+            getInputInRange(1,4, choice1);
 
             // jika by category
             if (choice1 == 2) {
@@ -589,7 +589,9 @@ void tampilan_penjual(User &user, std::map<std::string, User*> &users, std::map<
                     }
                 }
                 printProduk(result);
-            } 
+            } else { // kembali
+                continue;
+            }
 
         // Menu jualan
         } else if (choice == 2) {
