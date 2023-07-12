@@ -23,34 +23,7 @@ Program ini merupakan implementasi sederhana dari sistem E-commerce yang memungk
 
 - **Instalasi CMake**
 
-**Instalasi CMake di macOS**
-1. Buka terminal di macOS.
-2. Pastikan Anda memiliki Homebrew terinstal di sistem Anda. Jika belum, Anda dapat mengikuti petunjuk instalasi di https://brew.sh/ untuk menginstal Homebrew.
-3. Jalankan perintah berikut di terminal untuk menginstal CMake menggunakan Homebrew:
-   ```
-   brew install cmake
-   ```
-4. Setelah proses instalasi selesai, Anda dapat memeriksa apakah CMake terinstal dengan menjalankan perintah:
-   ```
-   cmake --version
-   ```
-   Jika Anda melihat versi CMake yang tercetak di terminal, itu berarti CMake telah terinstal dengan sukses.
-
-- **Instalasi CMake di Ubuntu atau Debian**
-1. Buka terminal di sistem Ubuntu atau Debian.
-2. Jalankan perintah berikut di terminal untuk menginstal CMake menggunakan apt-get:
-   ```
-   sudo apt-get update
-   sudo apt-get install cmake
-   ```
-3. Setelah proses instalasi selesai, Anda dapat memeriksa apakah CMake terinstal dengan menjalankan perintah:
-   ```
-   cmake --version
-   ```
-   Jika Anda melihat versi CMake yang tercetak di terminal, itu berarti CMake telah terinstal dengan sukses.
-
-- **Instalasi CMake di Windows**
-1. Kunjungi situs web resmi CMake di https://cmake.org/download/ dan unduh versi terbaru dari CMake untuk Windows.
+1. Kunjungi situs web resmi CMake di https://cmake.org/download/ dan unduh versi terbaru dari CMake (sesuaikan dengan sistem OS Anda).
 2. Setelah unduhan selesai, buka file installer CMake (file dengan ekstensi .msi) dan ikuti petunjuk instalasi yang diberikan.
 3. Di jendela instalasi, pilih opsi "Add CMake to the system PATH for all users" untuk menambahkan CMake ke PATH sistem.
 4. Lanjutkan dengan mengklik tombol "Next" atau "Install" sampai proses instalasi selesai.
@@ -62,7 +35,7 @@ Program ini merupakan implementasi sederhana dari sistem E-commerce yang memungk
 
 - Setelah Anda mempunyai ketiga syarat di atas, Anda dapat mendownload repo ini atau clone repo ini. 
 
-**Kompilasi dan Eksekusi Program dengan CMAKE**
+- **Kompilasi dan Eksekusi Program dengan CMAKE**
 1. Buka terminal atau command prompt di direktori proyek Anda.
 2. Jalankan perintah berikut untuk membuat direktori build:
    ```
